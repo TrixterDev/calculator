@@ -1,10 +1,11 @@
 .modal {
   position: fixed;
-  top: 0;
+  top: -1920px;
   z-index: 9;
   color: #fff;
   background: #00000094;
   width: 100%;
+  transition: 0.5s all;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,4 +20,8 @@
     right: 25px;
     background: none;
   }
+}
+
+.show {
+  top: 0;
 }
