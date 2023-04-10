@@ -31,3 +31,5 @@ const querySelector = (select, num, arr) => {
 querySelector(".input_check", 200, 0);
 
 querySelector(".input_check", 500, 1);
+querySelector(".input_check", 1000, 3);
+querySelector(".input_check", 1000, 3);
