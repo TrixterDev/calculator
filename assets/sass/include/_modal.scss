@@ -1,0 +1,22 @@
+.modal {
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  color: #fff;
+  background: #00000094;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 50px;
+  height: 100vh;
+  &__clouse {
+    font-size: 120px;
+    border: none;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: none;
+  }
+}
