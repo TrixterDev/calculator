@@ -17,19 +17,14 @@ const price = document.querySelector(".generalSym__price");
 
 const xz = document.querySelectorAll(".input_check");
 
-const querySelector = (select, num, arr) => {
+const querySelector = (select, num, arr, rate) => {
   const selector = document.querySelectorAll(select);
   selector[arr].addEventListener("click", (e) => {
     if (e.isTrusted) {
-      const generalSymm = (symm += +num);
-      console.log(generalSymm);
-      price.innerHTML = generalSymm;
+      let generalSymm = (symm += +num);
+      price.innerHTML = generalSymm += +rate;
     }
   });
 };
 
-querySelector(".input_check", 200, 0);
-
-querySelector(".input_check", 500, 1);
-querySelector(".input_check", 1000, 3);
-
+querySelector(".input_check", 1000, 54, 18000);
