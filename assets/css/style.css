@@ -1,13 +1,26 @@
 .checkbox_block {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  /* grid-template-rows: 1fr 1fr 1fr; */
+  grid-template-columns: 1fr 100px 100px 100px 100px 120px;
 }
 
 .checkbox_title {
-  /* width: 100px; */
-  height: 50px;
+  height: 70px;
   border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input_check {
+  width: 25px;
+  height: 25px;
+  display: block;
+  margin: auto;
+  margin-top: 20%;
+}
+
+.title_checkbox {
+  width: 100px;
 }
 
 .modal {
