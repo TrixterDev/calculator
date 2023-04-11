@@ -1,0 +1,103 @@
+.drop-down {
+  display: flex;
+  align-items: center;
+  position: relative;
+  &__select {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    border: 0.125rem solid #25a3f7;
+    border-radius: 0.75rem;
+    color: #fff;
+    background: #25a3f7a1;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.75rem;
+
+    img {
+      filter: invert(1);
+      width: 35px;
+      transition: 0.5s all;
+      height: 35px;
+    }
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.3125rem;
+    width: 100%;
+    position: absolute;
+    color: #fff;
+    top: 3.3125rem;
+    height: 0;
+    transition: 0.5s all;
+    overflow-y: scroll;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background: #71c3fa;
+
+    button {
+      font-weight: 700;
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      font-size: 18px;
+      background: none;
+    }
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #fdb44b;
+      border-radius: 50px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #fdb44b;
+    }
+  }
+  &__active {
+    transform: rotate(180deg);
+  }
+  &__active-list {
+    height: 20rem;
+    border-top: none !important;
+    border: 2px solid #25a3f7;
+  }
+}
+
+.drop-down__input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  > input {
+    transform: scale(2);
+  }
+}
+.drop-dow__cont {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+.drop-down__input label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.drop-down__input label::before {
+  border-radius: 0.3125rem;
+  content: "";
+  transition: 0.2s all;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.0625rem solid #42766c;
+  left: 0;
+  position: absolute;
+}

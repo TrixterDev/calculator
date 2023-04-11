@@ -5,13 +5,22 @@
   align-items: center;
   justify-content: space-between;
   gap: 30px;
+  width: 50%;
+  margin: auto;
   padding: 20px;
   &__field {
+    width: 100%;
     > input {
       padding: 12px;
-      border: 2px solid #ccc;
+      border: 2px solid #25a3f7;
+      border-radius: 12px;
       outline: none;
       width: 100%;
+      appearance: none;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
       &:checked {
         background: #000;
       }
@@ -22,16 +31,23 @@
       top: 12px;
     }
   }
+  > div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
   &__btn {
     border: none;
-    background: #000;
-    border: 2px solid #000;
+    background: #fdb44b;
+    border: 2px solid #fdb44b;
     color: #fff;
+    font-weight: 700;
     padding: 12px 26px;
     transition: 0.5s all;
     border-radius: 12px;
     &:hover {
-      color: #000;
+      color: #fdb44b;
       background: none;
     }
   }

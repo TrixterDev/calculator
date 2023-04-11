@@ -3,6 +3,7 @@
 @import "./include/_condition.scss";
 @import "./include/_form.scss";
 @import "./include/_symm.scss";
+@import "./include/_dropDown.scss";
 
 * {
   margin: 0;
@@ -17,8 +18,6 @@ button {
   cursor: pointer;
 }
 
-.content {
+.orders {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
 }

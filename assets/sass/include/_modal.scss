@@ -20,8 +20,17 @@
     right: 25px;
     background: none;
   }
+  &__form {
+    position: absolute;
+    left: -250rem;
+    transition: 0.5s all;
+  }
 }
 
 .show {
   top: 0;
+}
+
+.show-form {
+  left: 0;
 }
