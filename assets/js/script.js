@@ -27,4 +27,20 @@ const querySelector = (select, num, arr, rate) => {
   });
 };
 
-querySelector(".input_check", 1000, 54, 18000);
+querySelector(".input_check", 500, 2, 0);
+querySelector(".input_check", 1000, 3, 0);
+querySelector(".input_check", 1000, 6, 0);
+querySelector(".input_check", 1500, 7, 0);
+querySelector(".input_check", 1500, 10, 0);
+querySelector(".input_check", 2000, 11, 0);
+querySelector(".input_check", 2000, 14, 0);
+querySelector(".input_check", 2500, 15, 0);
+querySelector(".input_check", 2500, 18, 0);
+querySelector(".input_check", 3000, 19, 0);
+querySelector(".input_check", 3000, 22, 0);
+querySelector(".input_check", 3500, 23, 0);
+
+
+
+
+
