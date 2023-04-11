@@ -141,6 +141,7 @@
 .drop-down__select {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1.25rem;
   border: 0.125rem solid #25a3f7;
   border-radius: 0.75rem;
@@ -149,6 +150,7 @@
   text-align: center;
   cursor: pointer;
   padding: 0.75rem;
+  width: 320px;
 }
 .drop-down__select img {
   filter: invert(1);

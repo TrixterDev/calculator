@@ -13,6 +13,7 @@ option.forEach((data) => {
   console.log(data.textContent);
   data.addEventListener("click", () => {
     if (data.textContent.includes("200")) {
+      
       select.innerHTML = data.textContent;
     } else if (data.textContent.includes("300")) {
       select.innerHTML = data.textContent;
@@ -46,7 +47,7 @@ option.forEach((data) => {
 
 const dropDownActive = () => {
   moveClass(arrowSelect, "drop-down__active");
-  moveClass(listSelect, "xz-active-list");
+  moveClass(listSelect, "drop-down__active-list");
 };
 
 dropDown.addEventListener("click", dropDownActive);
