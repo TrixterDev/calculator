@@ -87,6 +87,12 @@
         animation: myAnim 0.5s ease-in-out 0s 1 normal forwards;
       }
     }
+    &:disabled {
+      + label::before {
+        background: #eeeeee;
+        border: 2px solid #c4c4c4;
+      }
+    }
   }
 }
 .drop-dow__cont {

@@ -5,6 +5,22 @@ const select = document.querySelector("#select");
 const arrowSelect = document.querySelector(".drop-down__arrow");
 const listSelect = document.querySelector(".drop-down__list");
 
+const inputs = document.querySelectorAll(".drop-down__input > input");
+
+inputs.forEach((data) => {
+  const mutationInputs = new MutationObserver(() => {
+    data.removeAttribute("disabled");
+  });
+  mutationInputs.observe(select, {
+    attributes: true,
+    characterData: true,
+    childList: true,
+    subtree: true,
+    attributeOldValue: true,
+    characterDataOldValue: true,
+  });
+});
+
 const moveClass = (selector, cn) => {
   selector.classList.toggle(cn);
 };
@@ -13,7 +29,6 @@ option.forEach((data) => {
   console.log(data.textContent);
   data.addEventListener("click", () => {
     if (data.textContent.includes("200")) {
-      
       select.innerHTML = data.textContent;
     } else if (data.textContent.includes("300")) {
       select.innerHTML = data.textContent;
