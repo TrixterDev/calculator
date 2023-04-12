@@ -6,7 +6,25 @@ const arrowSelect = document.querySelector(".drop-down__arrow");
 const listSelect = document.querySelector(".drop-down__list");
 
 const addPrice = (symm) => {
-  const generalSym = +price.textContent + symm;
+  let generalSym = +price.textContent + symm;
+  inputs[0].addEventListener("click", (event) => {
+    if (event.target) {
+      generalSym += 200;
+      price.innerHTML = generalSym;
+    }
+  });
+  inputs[2].addEventListener("click", (event) => {
+    if (event.target) {
+      generalSym += 500;
+      price.innerHTML = generalSym;
+    }
+  });
+  inputs[3].addEventListener("click", (event) => {
+    if (event.target) {
+      generalSym += 1000;
+      price.innerHTML = generalSym;
+    }
+  });
   price.innerHTML = generalSym;
 };
 const inputs = document.querySelectorAll(".drop-down__input > input");
