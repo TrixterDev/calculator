@@ -30,7 +30,7 @@
     margin-top: -500px;
   }
   &__form {
-    position: absolute;
+    position: fixed;
     left: -250rem;
     transition: 0.5s all;
     width: 100%;
@@ -38,7 +38,7 @@
     z-index: 9;
     background: #00000094;
     height: 100%;
-    margin-top: -180px;
+    top: 0;
   }
 }
 

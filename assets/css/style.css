@@ -55,7 +55,7 @@
   margin-top: -500px;
 }
 .modal__form {
-  position: absolute;
+  position: fixed;
   left: -250rem;
   transition: 0.5s all;
   width: 100%;
@@ -63,7 +63,7 @@
   z-index: 9;
   background: rgba(0, 0, 0, 0.5803921569);
   height: 100%;
-  margin-top: -180px;
+  top: 0;
 }
 
 .show {
