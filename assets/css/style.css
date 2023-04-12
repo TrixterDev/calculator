@@ -146,6 +146,14 @@
   color: #fdb44b;
   background: none;
 }
+.form__btn:disabled {
+  background: #ffcb83;
+  border: 2px solid #ffcb83;
+}
+.form__btn:disabled:hover {
+  color: #fff;
+  cursor: no-drop;
+}
 
 .form_button {
   width: 200px;
@@ -251,6 +259,10 @@
   background: url("../img/done.png") no-repeat;
   background-size: cover;
   animation: myAnim 0.5s ease-in-out 0s 1 normal forwards;
+}
+.drop-down__input > input:disabled + label::before {
+  background: #eeeeee;
+  border: 2px solid #c4c4c4;
 }
 
 .drop-dow__cont {

@@ -50,6 +50,14 @@
       color: #fdb44b;
       background: none;
     }
+    &:disabled {
+      background: #ffcb83;
+      border: 2px solid #ffcb83;
+      &:hover {
+        color: #fff;
+        cursor: no-drop;
+      }
+    }
   }
 }
 .form_button {
