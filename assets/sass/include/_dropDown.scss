@@ -1,6 +1,6 @@
 .drop-down {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
   &__select {
     display: flex;
@@ -30,7 +30,7 @@
     width: 100%;
     position: absolute;
     color: #fff;
-    top: 3.3125rem;
+    top: 53px;
     height: 0;
     transition: 0.5s all;
     overflow-y: scroll;
@@ -75,15 +75,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
   justify-content: center;
   > input {
     transform: scale(2);
     opacity: 0;
+    position: absolute;
     &:checked {
       + label::before {
         background: url("../img/done.png") no-repeat;
         background-size: cover;
+        animation: myAnim 0.5s ease-in-out 0s 1 normal forwards;
       }
     }
   }
@@ -92,12 +93,18 @@
   display: flex;
   align-items: flex-start;
   gap: 30px;
+  padding: 25px;
+  border-radius: 12px;
+  border: 2px solid #25a3f7;
 }
 .drop-down__input label {
   font-size: 1.25rem;
   font-weight: 600;
   display: flex;
+  height: 160px;
   align-items: center;
+  flex-direction: column-reverse;
+  justify-content: space-between;
 }
 .drop-down__input label::before {
   border-radius: 0.3125rem;
@@ -109,7 +116,17 @@
   border: 2px solid #fdb44b;
   left: 0;
   right: 0;
-  top: 120px;
-  margin: auto;
-  position: absolute;
+  top: 100px;
+}
+
+@keyframes myAnim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
