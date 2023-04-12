@@ -5,6 +5,11 @@ const select = document.querySelector("#select");
 const arrowSelect = document.querySelector(".drop-down__arrow");
 const listSelect = document.querySelector(".drop-down__list");
 
+const addPrice = (symm) => {
+  const generalSym = +price.textContent + symm;
+  price.innerHTML = generalSym;
+};
+
 const moveClass = (selector, cn) => {
   selector.classList.toggle(cn);
 };
@@ -12,34 +17,46 @@ const moveClass = (selector, cn) => {
 option.forEach((data) => {
   console.log(data.textContent);
   data.addEventListener("click", () => {
-    if (data.textContent.includes("200")) {
-      
+    if (data.textContent === "200") {
+      addPrice(0);
       select.innerHTML = data.textContent;
-    } else if (data.textContent.includes("300")) {
+    } else if (data.textContent === "От 201 до 300") {
+      addPrice(500);
       select.innerHTML = data.textContent;
-    } else if (data.textContent.includes("500")) {
+    } else if (data.textContent === "От 301 до 500") {
       select.innerHTML = data.textContent;
-    } else if (data.textContent.includes("700")) {
+      addPrice(1000);
+    } else if (data.textContent === "От 501 до 700") {
       select.innerHTML = data.textContent;
-    } else if (data.textContent.includes("1000")) {
+      addPrice(1500);
+    } else if (data.textContent === "От 701 до 1000") {
       select.innerHTML = data.textContent;
-    } else if (data.textContent.includes("1500")) {
+      addPrice(2000);
+    } else if (data.textContent === "От 1001 до 1500") {
       select.innerHTML = data.textContent;
-    } else if (data.textContent.includes("2000")) {
+      addPrice(2500);
+    } else if (data.textContent === "От 1501 до 2000") {
       select.innerHTML = data.textContent;
-    } else if (data.textContent.includes("4000")) {
+      addPrice(3000);
+    } else if (data.textContent === "От 2000 до 4000") {
       select.innerHTML = data.textContent;
-    } else if (data.textContent.includes("5000")) {
+      addPrice(3500);
+    } else if (data.textContent === "От 4001 до 5000") {
       select.innerHTML = data.textContent;
-    } else if (data.textContent.includes("7000")) {
+      addPrice(4000);
+    } else if (data.textContent === "От 5001 до 7000") {
       select.innerHTML = data.textContent;
-    } else if (data.textContent.includes("8000")) {
+      addPrice(5000);
+    } else if (data.textContent === "От 7001 до 8000") {
       select.innerHTML = data.textContent;
-    } else if (data.textContent.includes("9000")) {
+      addPrice(6000);
+    } else if (data.textContent === "От 8001 до 9000") {
       select.innerHTML = data.textContent;
-    } else if (data.textContent.includes("до 15000")) {
+      addPrice(11000);
+    } else if (data.textContent === "От 9000 до 15000") {
       select.innerHTML = data.textContent;
-    } else if (data.textContent.includes("Более")) {
+      addPrice(15000);
+    } else if (data.textContent === "От 15000 и более") {
       select.innerHTML = "Договорная";
     }
   });
