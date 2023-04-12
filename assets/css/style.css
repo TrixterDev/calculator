@@ -52,7 +52,7 @@
   right: 25px;
   color: white;
   background: none;
-  margin-top: -500px;
+  top: 25px;
 }
 .modal__form {
   position: fixed;
