@@ -20,7 +20,11 @@ const mutationBtn = new MutationObserver(() => {
 });
 
 mutationBtn.observe(priceField, {
+  attributes: true,
+  characterData: true,
+  childList: true,
   subtree: true,
+  attributeOldValue: true,
   characterDataOldValue: true,
 });
 
