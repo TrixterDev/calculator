@@ -33,8 +33,8 @@ priceField.addEventListener("change", () => {
     formBtn.removeAttribute("disabled");
   }
 });
-modalBtn.addEventListener("click", () => toggle(modal, "show"));
-btnClouse.addEventListener("click", () => clouse(modal, "show"));
-formBtn.addEventListener("click", () => toggle(modalForm, "show-form"));
+// modalBtn.addEventListener("click", () => toggle(modal, "show"));
+// btnClouse.addEventListener("click", () => clouse(modal, "show"));
+// formBtn.addEventListener("click", () => toggle(modalForm, "show-form"));
 
-ClouseBtn.addEventListener("click", () => clouse(modalForm, "show-form"));
+// ClouseBtn.addEventListener("click", () => clouse(modalForm, "show-form"));

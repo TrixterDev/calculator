@@ -7,44 +7,50 @@
     align-items: center;
     justify-content: space-between;
     gap: 1.25rem;
-    border: 0.125rem solid #25a3f7;
     border-radius: 0.75rem;
+    width: 100%;
     color: #fff;
-    background: #25a3f7a1;
+    background: #fdb44b;
     text-align: center;
     cursor: pointer;
     padding: 0.75rem;
-    width: 320px;
+    h3 {
+      font-size: 22px;
+    }
     img {
       filter: invert(1);
-      width: 35px;
+      width: 25px;
       transition: 0.5s all;
-      height: 35px;
+      height: 25px;
     }
   }
   &__list {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 0.3125rem;
     width: 100%;
     position: absolute;
     color: #fff;
-    top: 53px;
+    top: 39px;
+    z-index: 9;
     height: 0;
     transition: 0.5s all;
     overflow-y: scroll;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-    background: #71c3fa;
-
+    background: #fdb44b;
     button {
       font-weight: 700;
+      border-bottom: 2px solid #fff !important;
       width: 100%;
-      padding: 0.75rem;
+      padding: 20px 10px;
+      font-size: 24px;
       border: none;
       font-size: 18px;
       background: none;
+      &:last-child {
+        border: none !important;
+      }
     }
     &::-webkit-scrollbar {
       width: 10px;
@@ -54,20 +60,16 @@
       border-radius: 10px;
     }
     &::-webkit-scrollbar-thumb {
-      background: #fdb44b;
+      background: #84a1ff;
       border-radius: 50px;
-    }
-    &::-webkit-scrollbar-thumb:hover {
-      background: #fdb44b;
     }
   }
   &__active {
     transform: rotate(180deg);
   }
   &__active-list {
-    height: 20rem;
+    height: 526px;
     border-top: none !important;
-    border: 2px solid #25a3f7;
   }
 }
 
@@ -75,6 +77,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   justify-content: center;
   > input {
     transform: scale(2);
@@ -82,7 +85,7 @@
     position: absolute;
     &:checked {
       + label::before {
-        background: url("../img/done.png") no-repeat;
+        background: url("../img/done.svg") no-repeat;
         background-size: cover;
         animation: myAnim 0.5s ease-in-out 0s 1 normal forwards;
       }
@@ -99,26 +102,26 @@
   display: flex;
   align-items: flex-start;
   gap: 30px;
-  padding: 25px;
+  width: 100%;
+  flex-direction: column;
   border-radius: 12px;
-  border: 2px solid #25a3f7;
 }
 .drop-down__input label {
-  font-size: 1.25rem;
+  font-size: 22px;
   font-weight: 600;
+  width: 100%;
   display: flex;
-  height: 160px;
   align-items: center;
-  flex-direction: column-reverse;
   justify-content: space-between;
 }
 .drop-down__input label::before {
   border-radius: 0.3125rem;
   content: "";
+  order: 2;
   transition: 0.2s all;
   padding: 12px;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 5px;
+  height: 5px;
   border: 2px solid #fdb44b;
   left: 0;
   right: 0;
