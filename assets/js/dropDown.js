@@ -6,73 +6,72 @@ const arrowSelect = document.querySelector(".drop-down__arrow");
 const listSelect = document.querySelector(".drop-down__list");
 const inputs = document.querySelectorAll(".drop-down__input > input");
 
+let count = 0;
+
 const addPrice = (symm) => {
-  let generalSym = +price.textContent + symm;
-  const changePrice = (arr, symm) => {
-    let countClick = 0;
-    inputs[arr].addEventListener("click", (event) => {
-      if (event.target) {
-        countClick++;
-        if (countClick > 1) {
-          const minusPrice = (generalSym -= symm);
-          countClick -= 2;
-          price.innerHTML = minusPrice;
-        }
-        if (countClick > 0) {
-          generalSym += symm;
-          price.innerHTML = generalSym;
-        }
-      }
-    });
-  };
-  const multiplicationPrice = (arr) => {
-    let countClick = 0;
-    inputs[+arr].addEventListener("click", (event) => {
-      if (event.target) {
-        countClick++;
-        if (countClick > 1) {
-          let devide = price.textContent % 1.5;
-          let finiteSymm = (generalSym -= devide);
-          price.innerHTML = finiteSymm;
-          countClick -= 2;
-        }
-        if (countClick > 0) {
-          let devide = (price.textContent *= 0.5);
-          const finiteSymm = generalSym + devide;
-          price.innerHTML = finiteSymm;
-        }
-      }
-    });
-  };
+  changePrice();
+  multiplicationPrice();
+  cityAndVilage();
+  price.innerHTML = parseInt(price.textContent) + symm;
+};
 
-  inputs[0].addEventListener("click", (event) => {
-    if (event.target) {
-      inputs[1].setAttribute("disabled", "disabled");
+const cityAndVilage = () => {
+  inputs.forEach((data, index) => {
+    if (index === 0) {
+      data.addEventListener("change", (event) => {
+        event.target.checked
+          ? inputs[1].toggleAttribute("disabled", "disabled")
+          : inputs[1].removeAttribute("disabled");
+      });
+    } else if (index === 1) {
+      data.addEventListener("change", (event) => {
+        const generalSym = +price.textContent;
+        if (event.target.checked) {
+          inputs[0].toggleAttribute("disabled", "disabled");
+          price.innerHTML = generalSym + 1000;
+        } else {
+          inputs[0].removeAttribute("disabled");
+          price.innerHTML = generalSym - 1000;
+        }
+      });
     }
   });
-  let countClick = 0;
-  inputs[1].addEventListener("click", (event) => {
-    if (event.target) {
-      countClick++;
-      if (countClick > 1) {
-        const minusPrice = (generalSym -= 500);
-        countClick -= 2;
-        price.innerHTML = minusPrice;
-      }
-      if (countClick > 0) {
-        generalSym += 500;
-        price.innerHTML = generalSym;
-        console.log(countClick);
-      }
-      inputs[0].setAttribute("disabled", "disabled");
+};
+
+const changePrice = () => {
+  inputs.forEach((item, index) => {
+    if (index === 2) {
+      item.addEventListener("change", (event) => {
+        const generalSym = +price.textContent;
+        event.target.checked
+          ? (price.innerHTML = generalSym + 200)
+          : (price.innerHTML = generalSym - 200);
+      });
+    } else if (index === 3) {
+      item.addEventListener("change", (event) => {
+        const generalSym = +price.textContent;
+        event.target.checked
+          ? (price.innerHTML = generalSym + 1000)
+          : (price.innerHTML = generalSym - 1000);
+      });
     }
   });
-  changePrice(2, 200);
-  changePrice(3, 1000);
-  multiplicationPrice(4);
-  multiplicationPrice(5);
+};
 
-  price.innerHTML = generalSym;
+const multiplicationPrice = () => {
+  inputs.forEach((item, index) => {
+    if (index === 4 || index === 5) {
+      item.addEventListener("change", (event) => {
+        const generalSym = +price.textContent;
+        if (event.target.checked) {
+          let devide = generalSym * 0.5;
+          price.innerHTML = generalSym + devide;
+        } else {
+          price.innerHTML = generalSym / 1.5;
+        }
+      });
+    }
+  });
 };
 
 inputs.forEach((data) => {
@@ -94,71 +93,102 @@ const moveClass = (selector, cn) => {
   selector.classList.toggle(cn);
 };
 
-option.forEach((data) => {
-  data.addEventListener("click", () => {
-    if (data.textContent === "200") {
+option.forEach((data, index) => {
+  if (index === 0) {
+    data.addEventListener("click", () => {
       price.innerHTML = 3000;
       addPrice(0);
       select.innerHTML = data.textContent;
-    } else if (data.textContent === "От 201 до 300") {
+    });
+  } else if (index === 1) {
+    data.addEventListener("click", () => {
       price.innerHTML = 3000;
       addPrice(500);
       select.innerHTML = data.textContent;
-    } else if (data.textContent === "От 301 до 500") {
+    });
+  } else if (index === 2) {
+    data.addEventListener("click", () => {
       price.innerHTML = 3000;
-      select.innerHTML = data.textContent;
       addPrice(1000);
-    } else if (data.textContent === "От 501 до 700") {
-      price.innerHTML = 3000;
       select.innerHTML = data.textContent;
+    });
+  } else if (index === 3) {
+    data.addEventListener("click", () => {
+      price.innerHTML = 3000;
       addPrice(1500);
-    } else if (data.textContent === "От 701 до 1000") {
-      price.innerHTML = 3000;
       select.innerHTML = data.textContent;
+    });
+  } else if (index === 4) {
+    data.addEventListener("click", () => {
+      price.innerHTML = 3000;
       addPrice(2000);
-    } else if (data.textContent === "От 1001 до 1500") {
-      price.innerHTML = 3000;
       select.innerHTML = data.textContent;
+    });
+  } else if (index === 5) {
+    data.addEventListener("click", () => {
+      price.innerHTML = 3000;
       addPrice(2500);
-    } else if (data.textContent === "От 1501 до 2000") {
-      price.innerHTML = 3000;
       select.innerHTML = data.textContent;
+    });
+  } else if (index === 6) {
+    data.addEventListener("click", () => {
+      price.innerHTML = 3000;
       addPrice(3000);
-    } else if (data.textContent === "От 2000 до 4000") {
-      price.innerHTML = 3000;
       select.innerHTML = data.textContent;
+    });
+  } else if (index === 7) {
+    data.addEventListener("click", () => {
+      price.innerHTML = 3000;
       addPrice(3500);
-    } else if (data.textContent === "От 4001 до 5000") {
-      price.innerHTML = 3000;
       select.innerHTML = data.textContent;
+    });
+  } else if (index === 8) {
+    data.addEventListener("click", () => {
+      price.innerHTML = 3000;
       addPrice(4000);
-    } else if (data.textContent === "От 5001 до 7000") {
-      price.innerHTML = 3000;
       select.innerHTML = data.textContent;
+    });
+  } else if (index === 9) {
+    data.addEventListener("click", () => {
+      price.innerHTML = 3000;
       addPrice(5000);
-    } else if (data.textContent === "От 7001 до 8000") {
-      price.innerHTML = 3000;
       select.innerHTML = data.textContent;
+    });
+  } else if (index === 10) {
+    data.addEventListener("click", () => {
+      price.innerHTML = 3000;
       addPrice(6000);
-    } else if (data.textContent === "От 8001 до 9000") {
-      price.innerHTML = 3000;
       select.innerHTML = data.textContent;
+    });
+  } else if (index === 11) {
+    data.addEventListener("click", () => {
+      price.innerHTML = 3000;
       addPrice(11000);
-    } else if (data.textContent === "От 9000 до 15000") {
-      price.innerHTML = 3000;
       select.innerHTML = data.textContent;
+    });
+  } else if (index === 12) {
+    data.addEventListener("click", () => {
+      price.innerHTML = 3000;
       addPrice(15000);
-    } else if (data.textContent === "От 15000 и более") {
+      select.innerHTML = data.textContent;
+    });
+  } else {
+    data.addEventListener("click", () => {
       document.querySelector(".generalSym > b").innerHTML = "цена";
       price.innerHTML = "Договорная";
       select.innerHTML = data.textContent;
-    }
-  });
+    });
+  }
 });
 
 const dropDownActive = () => {
-  moveClass(arrowSelect, "drop-down__active");
-  moveClass(listSelect, "drop-down__active-list");
+  count++;
+  if (count > 2) {
+    location.reload();
+  } else {
+    moveClass(arrowSelect, "drop-down__active");
+    moveClass(listSelect, "drop-down__active-list");
+  }
 };
 
 dropDown.addEventListener("click", dropDownActive);
