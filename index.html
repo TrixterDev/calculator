@@ -9,7 +9,7 @@
   </head>
   <body>
     <main class="content">
-      <section class="orders">
+      <!-- <section class="orders">
         <div class="drop-dow__cont">
           <div class="drop-down__input">
             <input type="checkbox" class="checkbox__input" id="garbage" />
@@ -33,6 +33,7 @@
           <input
             type="number"
             class="input__drop-down"
+            min="0"
             placeholder="Кол-во абонентов"
           />
 
@@ -70,60 +71,34 @@
             <label for="integr" class="drop-down__h3">Нужна интегр 1C?</label>
           </div>
         </div>
-      </section>
+      </section> -->
       <hr class="line" />
       <div class="end-site__info">
-        <div class="generalSym">
+        <!-- <div class="generalSym">
           <h2>Итог:</h2>
           <ins class="generalSym__price">3000</ins>
           <b>cом</b>
-        </div>
-        <!-- <div>
+        </div> -->
+        <div>
           <button class="form__btn" disabled>Оформить заказ</button>
           <button class="condition__btn">Условия</button>
-        </div> -->
+        </div>
       </div>
     </main>
     <section class="modal">
-      <h2>Минимальный тариф 3000 com/месяц</h2>
-      <h2>
-        Если отмечен Город - Увеличивается тариф на 500 сом, если отмечено село
-        - не увеличивается
-      </h2>
-      <h2>
-        Если есть какой-то биллинг, с которго переходят к нам постоянная скидка
-        10% к тарифу
-      </h2>
-      <h2>
-        Если биллинг будет использоваться, для доп услуги (например основная
-        вода, хотят ещё мусор, то умножается на тариф )
-      </h2>
-      <h2>Если нужна интеграция с 1с - добавляется 1000 сом к тарифу</h2>
-      <h2>Активация SMS рассылка по должникам разовая доплата 200 сом</h2>
-      <h2>Разовый платеж по работам - от 15000 сом</h2>
+      <div class="modal__form">
+        <h3>sdfds</h3>
+        <input
+          type="number"
+          class="input__drop-down"
+          min="0"
+          placeholder="Кол-во абонентов"
+        />
+        <button>Lfktt</button>
+      </div>
       <button class="modal__clouse">&#215;</button>
     </section>
-    <section class="modal__form">
-      <div class="condition"></div>
-      <form class="form">
-        <div class="form__field">
-          <input id="name" placeholder="Введите ваше имя" type="text" />
-        </div>
-        <div class="form__field">
-          <input id="name" placeholder="E-mail" type="text" />
-        </div>
-        <div class="form__field">
-          <input
-            id="tel"
-            placeholder="Введите ваш номер телефона"
-            type="number"
-          />
-        </div>
-        <button class="form_button">Заказать</button>
-      </form>
-      <button class="modal__clouses">&#215;</button>
-    </section>
-    <!-- <script src="./assets/js/modal.js"></script> -->
+    <script src="./assets/js/modal.js"></script>
     <script src="./assets/js/dropDown.js"></script>
   </body>
 </html>

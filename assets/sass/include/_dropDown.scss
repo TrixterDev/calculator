@@ -136,6 +136,10 @@
   padding: 20px;
   outline: none;
   color: #84a1ff;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 }
 
 @keyframes myAnim {
