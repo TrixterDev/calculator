@@ -80,7 +80,7 @@ input.addEventListener("change", (event) => {
     console.log(event.target.value);
   }
 });
-const xz = () => {
+const change = () => {
   if (input.value) {
     inputs.forEach((data) => {
       data.removeAttribute("disabled");
