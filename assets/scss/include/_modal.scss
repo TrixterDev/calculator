@@ -36,43 +36,6 @@
   }
 }
 
-.stage {
-  &__input {
-    width: 600px;
-    height: 50px;
-    border: 4px solid #84a1ff;
-    font-size: 20px;
-    border-radius: 12px;
-    padding: 20px;
-  }
-  &__button {
-    width: 200px;
-    height: 40px;
-    background: #fdb44b;
-    border: none;
-    font-size: 20px;
-    border-radius: 12px;
-    color: white;
-  }
-  &-two {
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    // width: 100%;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // height: 100%;
-    // color: #fff;
-    // background: #00000069;
-  }
-  &__form {
-    max-width: 650px;
-    margin: auto;
-    background: #84a1ff;
-  }
-}
-
 @keyframes myAnim {
   0% {
     transform: scale(1);
