@@ -5,14 +5,15 @@ const select = document.querySelector("#select");
 const arrowSelect = document.querySelector(".drop-down__arrow");
 const listSelect = document.querySelector(".drop-down__list");
 const inputs = document.querySelectorAll(".drop-down__input > input");
+const input = document.querySelector(".input__drop-down");
 
 let count = 0;
 
-const addPrice = (symm) => {
+const addPrice = () => {
   changePrice();
   multiplicationPrice();
   cityAndVilage();
-  price.innerHTML = parseInt(price.textContent) + symm;
+  price.innerHTML = parseInt(price.textContent);
 };
 
 const cityAndVilage = () => {
@@ -74,20 +75,51 @@ const multiplicationPrice = () => {
   });
 };
 
-inputs.forEach((data) => {
-  const mutationInputs = new MutationObserver(() => {
-    data.removeAttribute("disabled");
-    data.checked = false;
-  });
-  mutationInputs.observe(select, {
-    attributes: true,
-    characterData: true,
-    childList: true,
-    subtree: true,
-    attributeOldValue: true,
-    characterDataOldValue: true,
-  });
+input.addEventListener("change", (event) => {
+  if (event.target.value === 400) {
+    console.log(event.target.value);
+  }
 });
+const xz = () => {
+  if (input.value) {
+    inputs.forEach((data) => {
+      data.removeAttribute("disabled");
+      addPrice();
+    });
+  }
+
+  if (input.value < 200) {
+    price.innerHTML = 3000;
+    add;
+  } else if (input.value > 200 || input.value < 300) {
+    price.innerHTML = 3500;
+  }
+};
+const mutationInput = new MutationObserver(() => {});
+
+mutationInput.observe(input, {
+  attributes: true,
+  characterData: true,
+  childList: true,
+  subtree: true,
+  attributeOldValue: true,
+  characterDataOldValue: true,
+});
+
+// inputs.forEach((data) => {
+//   const mutationInputs = new MutationObserver(() => {
+//     data.removeAttribute("disabled");
+//     data.checked = false;
+//   });
+//   mutationInputs.observe(select, {
+//     attributes: true,
+//     characterData: true,
+//     childList: true,
+//     subtree: true,
+//     attributeOldValue: true,
+//     characterDataOldValue: true,
+//   });
+// });
 
 const moveClass = (selector, cn) => {
   selector.classList.toggle(cn);
@@ -191,4 +223,4 @@ const dropDownActive = () => {
   }
 };
 
-dropDown.addEventListener("click", dropDownActive);
+// dropDown.addEventListener("click", dropDownActive);

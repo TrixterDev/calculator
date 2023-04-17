@@ -1,27 +1,3 @@
-.checkbox_block {
-  display: grid;
-  grid-template-columns: 1fr 100px 100px 100px 100px 120px;
-}
-
-.checkbox_title {
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.input_check {
-  width: 25px;
-  height: 25px;
-  display: block;
-  margin: auto;
-  margin-top: 20%;
-}
-
-.title_checkbox {
-  width: 100px;
-}
-
 .modal {
   position: fixed;
   top: -1920px;
@@ -224,7 +200,7 @@
   flex-direction: column;
   width: 100%;
   position: absolute;
-  color: #fff;
+  color: white;
   top: 39px;
   z-index: 9;
   height: 0;
@@ -318,6 +294,17 @@
   left: 0;
   right: 0;
   top: 100px;
+}
+
+.input__drop-down {
+  width: 100%;
+  height: 50px;
+  border: none;
+  font-size: 20px;
+  border-radius: 12px;
+  padding: 20px;
+  outline: none;
+  color: #84a1ff;
 }
 
 @keyframes myAnim {
