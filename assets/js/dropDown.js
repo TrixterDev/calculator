@@ -13,26 +13,27 @@ const addPrice = () => {
   changePrice();
   multiplicationPrice();
   cityAndVilage();
+  console.log("kajsndasmjk");
   price.innerHTML = parseInt(price.textContent);
 };
 
 const cityAndVilage = () => {
   inputs.forEach((data, index) => {
-    if (index === 0) {
+    if (index === 4) {
       data.addEventListener("change", (event) => {
         event.target.checked
-          ? inputs[1].toggleAttribute("disabled", "disabled")
-          : inputs[1].removeAttribute("disabled");
+          ? inputs[5].toggleAttribute("disabled", "disabled")
+          : inputs[5].removeAttribute("disabled");
       });
-    } else if (index === 1) {
+    } else if (index === 5) {
       data.addEventListener("change", (event) => {
         const generalSym = +price.textContent;
         if (event.target.checked) {
-          inputs[0].toggleAttribute("disabled", "disabled");
-          price.innerHTML = generalSym + 1000;
+          inputs[4].toggleAttribute("disabled", "disabled");
+          price.innerHTML = generalSym + 500;
         } else {
-          inputs[0].removeAttribute("disabled");
-          price.innerHTML = generalSym - 1000;
+          inputs[4].removeAttribute("disabled");
+          price.innerHTML = generalSym - 500;
         }
       });
     }
@@ -41,14 +42,14 @@ const cityAndVilage = () => {
 
 const changePrice = () => {
   inputs.forEach((item, index) => {
-    if (index === 2) {
+    if (index === 6) {
       item.addEventListener("change", (event) => {
         const generalSym = +price.textContent;
         event.target.checked
           ? (price.innerHTML = generalSym + 200)
           : (price.innerHTML = generalSym - 200);
       });
-    } else if (index === 3) {
+    } else if (index === 7) {
       item.addEventListener("change", (event) => {
         const generalSym = +price.textContent;
         event.target.checked
@@ -61,166 +62,53 @@ const changePrice = () => {
 
 const multiplicationPrice = () => {
   inputs.forEach((item, index) => {
-    if (index === 4 || index === 5) {
+    if (index === 0 || index === 1 || index === 2 || index === 3) {
       item.addEventListener("change", (event) => {
         const generalSym = +price.textContent;
         if (event.target.checked) {
           let devide = generalSym * 0.5;
-          price.innerHTML = generalSym + devide;
+          price.innerHTML = Math.floor(generalSym + devide);
         } else {
-          price.innerHTML = generalSym / 1.5;
+          price.innerHTML = Math.floor(generalSym / 1.5);
         }
       });
     }
   });
 };
 
-input.addEventListener("change", (event) => {
-  if (event.target.value === 400) {
-    console.log(event.target.value);
-  }
-});
-const change = () => {
-  if (input.value) {
+input.addEventListener("change", () => {
+  input.value &&
     inputs.forEach((data) => {
       data.removeAttribute("disabled");
-      addPrice();
     });
-  }
+  inputs[(4, 5, 6, 7)].checked = false;
 
-  if (input.value < 200) {
-    price.innerHTML = 3000;
-    add;
-  } else if (input.value > 200 || input.value < 300) {
-    price.innerHTML = 3500;
-  }
-};
-const mutationInput = new MutationObserver(() => {});
-
-mutationInput.observe(input, {
-  attributes: true,
-  characterData: true,
-  childList: true,
-  subtree: true,
-  attributeOldValue: true,
-  characterDataOldValue: true,
+  input.value < 201
+    ? (price.innerHTML = 3000 + +price.textContent)
+    : input.value < 300
+    ? (price.innerHTML = 3500 + +price.textContent)
+    : input.value < 500
+    ? (price.innerHTML = 4000 + +price.textContent)
+    : input.value < 700
+    ? (price.innerHTML = 4500 + +price.textContent)
+    : input.value < 1000
+    ? (price.innerHTML = 5000 + +price.textContent)
+    : input.value < 1500
+    ? (price.innerHTML = 5500 + +price.textContent)
+    : input.value < 2000
+    ? (price.innerHTML = 6000 + +price.textContent)
+    : input.value < 4000
+    ? (price.innerHTML = 6500 + +price.textContent)
+    : input.value < 5000
+    ? (price.innerHTML = 7000 + +price.textContent)
+    : input.value < 7000
+    ? (price.innerHTML = 8000 + +price.textContent)
+    : input.value < 8000
+    ? (price.innerHTML = 9000 + +price.textContent)
+    : input.value < 9000
+    ? (price.innerHTML = 14000 + +price.textContent)
+    : input.value < 15000
+    ? (price.innerHTML = 18000 + +price.textContent)
+    : (price.innerHTML = "Договорная");
 });
-
-// inputs.forEach((data) => {
-//   const mutationInputs = new MutationObserver(() => {
-//     data.removeAttribute("disabled");
-//     data.checked = false;
-//   });
-//   mutationInputs.observe(select, {
-//     attributes: true,
-//     characterData: true,
-//     childList: true,
-//     subtree: true,
-//     attributeOldValue: true,
-//     characterDataOldValue: true,
-//   });
-// });
-
-const moveClass = (selector, cn) => {
-  selector.classList.toggle(cn);
-};
-
-option.forEach((data, index) => {
-  if (index === 0) {
-    data.addEventListener("click", () => {
-      price.innerHTML = 3000;
-      addPrice(0);
-      select.innerHTML = data.textContent;
-    });
-  } else if (index === 1) {
-    data.addEventListener("click", () => {
-      price.innerHTML = 3000;
-      addPrice(500);
-      select.innerHTML = data.textContent;
-    });
-  } else if (index === 2) {
-    data.addEventListener("click", () => {
-      price.innerHTML = 3000;
-      addPrice(1000);
-      select.innerHTML = data.textContent;
-    });
-  } else if (index === 3) {
-    data.addEventListener("click", () => {
-      price.innerHTML = 3000;
-      addPrice(1500);
-      select.innerHTML = data.textContent;
-    });
-  } else if (index === 4) {
-    data.addEventListener("click", () => {
-      price.innerHTML = 3000;
-      addPrice(2000);
-      select.innerHTML = data.textContent;
-    });
-  } else if (index === 5) {
-    data.addEventListener("click", () => {
-      price.innerHTML = 3000;
-      addPrice(2500);
-      select.innerHTML = data.textContent;
-    });
-  } else if (index === 6) {
-    data.addEventListener("click", () => {
-      price.innerHTML = 3000;
-      addPrice(3000);
-      select.innerHTML = data.textContent;
-    });
-  } else if (index === 7) {
-    data.addEventListener("click", () => {
-      price.innerHTML = 3000;
-      addPrice(3500);
-      select.innerHTML = data.textContent;
-    });
-  } else if (index === 8) {
-    data.addEventListener("click", () => {
-      price.innerHTML = 3000;
-      addPrice(4000);
-      select.innerHTML = data.textContent;
-    });
-  } else if (index === 9) {
-    data.addEventListener("click", () => {
-      price.innerHTML = 3000;
-      addPrice(5000);
-      select.innerHTML = data.textContent;
-    });
-  } else if (index === 10) {
-    data.addEventListener("click", () => {
-      price.innerHTML = 3000;
-      addPrice(6000);
-      select.innerHTML = data.textContent;
-    });
-  } else if (index === 11) {
-    data.addEventListener("click", () => {
-      price.innerHTML = 3000;
-      addPrice(11000);
-      select.innerHTML = data.textContent;
-    });
-  } else if (index === 12) {
-    data.addEventListener("click", () => {
-      price.innerHTML = 3000;
-      addPrice(15000);
-      select.innerHTML = data.textContent;
-    });
-  } else {
-    data.addEventListener("click", () => {
-      document.querySelector(".generalSym > b").innerHTML = "цена";
-      price.innerHTML = "Договорная";
-      select.innerHTML = data.textContent;
-    });
-  }
-});
-
-const dropDownActive = () => {
-  count++;
-  if (count > 2) {
-    location.reload();
-  } else {
-    moveClass(arrowSelect, "drop-down__active");
-    moveClass(listSelect, "drop-down__active-list");
-  }
-};
-
-// dropDown.addEventListener("click", dropDownActive);
+addPrice();
