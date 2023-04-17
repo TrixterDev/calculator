@@ -20,6 +20,25 @@
   border: 2px solid #c4c4c4;
 }
 
+.stage__input {
+  width: 600px;
+  height: 50px;
+  border: 4px solid #84a1ff;
+  font-size: 20px;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.stage__button {
+  width: 200px;
+  height: 40px;
+  background: #fdb44b;
+  border: none;
+  font-size: 20px;
+  border-radius: 12px;
+  color: white;
+}
+
 * {
   margin: 0;
   padding: 0;
