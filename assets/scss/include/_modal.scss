@@ -1,0 +1,27 @@
+.modal {
+  &__form > input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    > input {
+      transform: scale(2);
+      opacity: 0;
+      position: absolute;
+      &:checked {
+        + label::before {
+          background: url("../img/done.svg") no-repeat;
+          background-size: cover;
+          animation: myAnim 0.5s ease-in-out 0s 1 normal forwards;
+        }
+      }
+      &:disabled {
+        + label::before {
+          background: #eeeeee;
+          border: 2px solid #c4c4c4;
+        }
+      }
+    }
+  }
+}
