@@ -1,20 +1,34 @@
 .stage {
   &__input {
-    width: 100%;
+    width: 80%;
     height: 50px;
-    border: 4px solid #84a1ff;
     font-size: 20px;
     border-radius: 12px;
     padding: 20px;
+    border: 4px solid rgb(17, 17, 124);
+    margin: auto;
+    display: flex;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
   }
   &__button {
-    width: 200px;
+    width: 30%;
     height: 40px;
     background: #fdb44b;
-    border: none;
+    border: 2px solid black;
     font-size: 20px;
+    margin: auto;
     border-radius: 12px;
+    color: rgb(8, 2, 2);
+    cursor: pointer;
+  }
+  &__text {
+    font-size: 30px;
+    text-align: center;
     color: white;
+    padding: 20px;
   }
 
   &-two {
@@ -30,8 +44,41 @@
     // background: #00000069;
   }
   &__form {
-    max-width: 650px;
+    max-width: 600px;
     margin: auto;
-    background: #84a1ff;
+    background: #567acf;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    height: 250px;
+    border-radius: 20px;
+    margin-top: 250px;
   }
 }
+.stage-one {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.modal__close {
+  font-size: 30px;
+  display: flex;
+  justify-content: end;
+  padding: 70px;
+  margin-top: -500px;
+  color: #567acf;
+}
+// .stage-one__button {
+//   width: 250px;
+//   height: 50px;
+//   font-size: 22px;
+//   background: #fdb44b;
+//   border: 2px solid black;
+//   color: white;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin: auto;
+//   margin-top: 300px;
+// }
