@@ -71,6 +71,18 @@
   color: white;
   padding: 20px;
 }
+.stage-two {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4117647059);
+}
 .stage__form {
   max-width: 600px;
   margin: auto;
